@@ -1,0 +1,932 @@
+<!-- /////////////////// HEADER //////////////////// -->
+
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="nav-logo">Barath</a>
+
+    <div class="nav-menu" id="nav-menu" [ngClass]="{'show': isMenuOpen}">
+      <!-- <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#home" class="nav-link" (click)="onNavLinkClick()">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#services" class="nav-link" (click)="onNavLinkClick()">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link" (click)="onNavLinkClick()">About Me</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#skills" class="nav-link" (click)="onNavLinkClick()">Skills</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#works" class="nav-link" (click)="onNavLinkClick()">Works</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#resume" class="nav-link" (click)="onNavLinkClick()">Resume</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#contact" class="nav-link" (click)="onNavLinkClick()">Contact</a>
+        </li>
+      </ul> -->
+
+      <ul class="nav-list">
+        <li class="nav-item" *ngFor="let link of navLinks">
+          <a [href]="'#' + link.section" class="nav-link" [ngClass]="{ 'active': activeSection === link.section }"
+            (click)="onNavLinkClick(link.section)">
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+
+
+      <div class="social-links">
+        <a href="" target="_blank" class="social-link">
+          <i class="ri-twitter-x-fill"></i>
+        </a>
+
+        <a href="" target="_blank" class="social-link">
+          <i class="ri-instagram-line"></i>
+        </a>
+
+        <a href="" target="_blank" class="social-link">
+          <i class="ri-facebook-circle-fill"></i>
+        </a>
+
+        <a href="" target="_blank" class="social-link">
+          <i class="ri-linkedin-box-fill"></i>
+        </a>
+      </div>
+
+      <div class="section-deco deco-left header-deco">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <div class="nav-settings" (click)="toggleSettings()">
+        <i class="ri-settings-3-line"></i>
+      </div>
+
+      <div class="nav-toggle" id="nav-toggle" (click)="toggleMenu()" [ngClass]="{'animation-toggle': isMenuOpen}"></div>
+    </div>
+  </nav>
+</header>
+
+<!-- //////////////////// MAIN ///////////////////// -->
+
+<main class="main">
+
+  <!-- //////////////////// HOME ///////////////////// -->
+
+  <section class="home section" id="home">
+    <div class="home-container container">
+      <div class="home-content">
+        <h2 class="home-subtitle">Hello, <span>My Name is</span></h2>
+        <h1 class="home-title"><span>Barath </span>Kumar</h1>
+        <h3 class="home-job">Frontend Developer & Assistant Cinematographer</h3>
+
+        <div class="home-banner">
+          <div class="home-img-wrapper">
+            <img src="assets/img/profile.png" alt="" class="home-profile">
+          </div>
+
+          <div class="home-data home-data-one">
+            <span class="home-data-no">1</span>
+            <h3 class="home-data-title">Year of <span>Experience</span></h3>
+          </div>
+
+          <div class="home-data home-data-two">
+            <span class="home-data-no">5+</span>
+            <h3 class="home-data-title">Completed <span>Projects</span></h3>
+          </div>
+
+          <img src="assets/img/shape-1.png" alt="" class="shape shape-1">
+          <img src="assets/img/shape-2.png" alt="" class="shape shape-2">
+          <img src="assets/img/shape-3.png" alt="" class="shape shape-3">
+        </div>
+
+        <p class="home-description">
+          I'm from Coimbatore. Frontend Developer with 1 year of hands-on experience in building responsive and dynamic web applications using Angular Framework.
+          I love discussing what make us Unique.
+        </p>
+
+        <div class=" home-socials social-links">
+          <!-- <a href="" target="_blank" class="social-link">
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+
+          <a href="" target="_blank" class="social-link">
+            <i class="ri-instagram-line"></i>
+          </a> -->
+
+          <a href="https://github.com/barathkumar703" target="_blank" class="social-link">
+            <i class="ri-github-fill"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/barath-kumar-3213a5357" target="_blank" class="social-link">
+            <i class="ri-linkedin-box-fill"></i>
+          </a>
+        </div>
+
+        <div class="home-btns">
+          <a download href="assets/files/BarathResume.pdf" class="btn">
+            Download CV
+          </a>
+
+          <a href="#skills" class="home-link">My Skills</a>
+        </div>
+
+      </div>
+
+      <div class="section-deco deco-left">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+    </div>
+  </section>
+
+  <!-- /////////////////// SERVICES  ///////////////////// -->
+
+  <section class="services section" id="services">
+    <h2 class="section-title" data-title="My Services">What I Do</h2>
+
+    <div class="container">
+      <!-- <div class="swiper services-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide card">
+            <h4 class="services-subtitle">Web Development</h4>
+
+            <h3 class="services-title">Web Page Design</h3>
+            <p class="services-description">
+              Web Designers craft the overall vision & plan for a website
+              layout. Professional logo development: Business, Company or
+              Personal
+            </p>
+
+            <a href="" class="link">See Pricing<i class="ri-arrow-right-line link"></i></a>
+          </div>
+
+          <div class="swiper-slide card">
+            <h4 class="services-subtitle">Photos & Graphic Designing</h4>
+
+            <h3 class="services-title">Abode Photoshop</h3>
+            <p class="services-description">
+              It’s known for powerful features that let you edit photos, 
+              create artwork, design UI/UX, make GIFs, and
+              even create mockups and 3D content.
+            </p>
+
+            <a href="" class="link">See Pricing<i class="ri-arrow-right-line link"></i></a>
+          </div>
+
+          <div class="swiper-slide card">
+            <h4 class="services-subtitle">Photos & Graphic Designing</h4>
+
+            <h3 class="services-title">Abode Photoshop</h3>
+            <p class="services-description">
+              It’s known for powerful features that let you edit photos, 
+              create artwork, design UI/UX, make GIFs, and
+              even create mockups and 3D content.
+            </p>
+
+            <a href="" class="link">See Pricing<i class="ri-arrow-right-line link"></i></a>
+          </div>
+
+          <div class="swiper-slide card">
+            <h4 class="services-subtitle">Video Editing</h4>
+
+            <h3 class="services-title">Abode Premiere Pro</h3>
+            <p class="services-description">
+              Proficient in Adobe Premiere Pro for video editing, 
+              including cutting, color grading, audio syncing, and 
+              transitions to produce polished visual content.
+            </p>
+
+            <a href="" class="link">See Pricing<i class="ri-arrow-right-line link"></i></a>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div id="owl-class">
+        <owl-carousel-o [options]="servicesCarouselOptions">
+          <ng-template carouselSlide>
+            <div class="card">
+              <h4 class="services-subtitle">Web Development</h4>
+              <h3 class="services-title">Web Page Design</h3>
+              <p class="services-description">
+                Web Designers craft the overall vision & plan for a website layout.
+                Professional logo development: Business, Company or Personal
+              </p>
+              <a href="" class="link">See Pricing<i class="ri-arrow-right-line link-icon"></i></a>
+            </div>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <div class="card">
+              <h4 class="services-subtitle">Photos & Graphic Designing</h4>
+              <h3 class="services-title">Adobe Photoshop</h3>
+              <p class="services-description">
+                Powerful features to edit photos, create artwork, design UI/UX,
+                make GIFs, and create 3D content.
+              </p>
+              <a href="" class="link">See Pricing<i class="ri-arrow-right-line link-icon"></i></a>
+            </div>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <div class="card">
+              <h4 class="services-subtitle">Video Editing</h4>
+              <h3 class="services-title">Adobe Premiere Pro</h3>
+              <p class="services-description">
+                Proficient in Adobe Premiere Pro for cutting, color grading,
+                audio syncing, and transitions to produce polished video content.
+              </p>
+              <a href="" class="link">See Pricing<i class="ri-arrow-right-line link-icon"></i></a>
+            </div>
+          </ng-template>
+
+          <ng-template carouselSlide>
+            <div class="card">
+              <h4 class="services-subtitle">Video Editing</h4>
+              <h3 class="services-title">Adobe Premiere Pro</h3>
+              <p class="services-description">
+                Proficient in Adobe Premiere Pro for cutting, color grading,
+                audio syncing, and transitions to produce polished video content.
+              </p>
+              <a href="" class="link">See Pricing<i class="ri-arrow-right-line link-icon"></i></a>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div> -->
+
+      <div id="owl-class">
+        <owl-carousel-o [options]="servicesCarouselOptions">
+          <ng-template carouselSlide *ngFor="let service of servicesList">
+            <div class="card">
+              <h4 class="services-subtitle">{{ service.subtitle }}</h4>
+              <h3 class="services-title">{{ service.title }}</h3>
+              <p class="services-description">
+                {{ service.description }}
+              </p>
+              <!-- <a href="" class="link">See Pricing<i class="ri-arrow-right-line link-icon"></i></a> -->
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+
+
+      <div class="section-deco deco-right">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- //////////////////// ABOUT ME ///////////////////// -->
+
+  <!-- //////////////////// SKILLS ///////////////////// -->
+
+  <section class="skills section" id="skills">
+    <h2 class="section-title" data-title="My Talent">Professional Skills</h2>
+
+    <div class="skills-container container grid">
+      <div class="skills-item">
+        <div class="skills-header">
+          <h3 class="skills-name">HTML</h3>
+          <span class="skills-value">90 <b>%</b></span>
+        </div>
+
+        <p class="skills-description">
+          HTML is the standard language used to create
+          and structure content on the web. HTML forms the
+          backbone of all web pages and works alongside CSS
+          and JavaScript to build interactive websites
+        </p>
+
+        <div class="skills-bar">
+          <span class="skills-percentage" style="width: 90%;"></span>
+        </div>
+      </div>
+
+      <div class="skills-item">
+        <div class="skills-header">
+          <h3 class="skills-name">CSS</h3>
+          <span class="skills-value">85 <b>%</b></span>
+        </div>
+
+        <p class="skills-description">
+          CSS is the language used to style and layout
+          HTML content. With CSS, you can control the appearance
+          of web elements—like colors, fonts, spacing, layout, and responsiveness.
+        </p>
+
+        <div class="skills-bar">
+          <span class="skills-percentage" style="width: 85%;"></span>
+        </div>
+      </div>
+
+      <div class="skills-item">
+        <div class="skills-header">
+          <h3 class="skills-name">JavaScript</h3>
+          <span class="skills-value">80 <b>%</b></span>
+        </div>
+
+        <p class="skills-description">
+          JavaScript is a programming language primarily used to
+          create interactive and dynamic content on websites. It runs in the
+          browser and works alongside HTML and CSS to bring web pages to lif
+        </p>
+
+        <div class="skills-bar">
+          <span class="skills-percentage" style="width: 80%;"></span>
+        </div>
+      </div>
+
+      <div class="skills-item">
+        <div class="skills-header">
+          <h3 class="skills-name">Angular Framework</h3>
+          <span class="skills-value">85 <b>%</b></span>
+        </div>
+
+        <p class="skills-description">
+          Angular is a popular TypeScript-based open-source web application
+          framework developed and maintained by Google. Where most of the app
+          logic runs in the browser rather than on the server.
+        </p>
+
+        <div class="skills-bar">
+          <span class="skills-percentage" style="width: 90%;"></span>
+        </div>
+      </div>
+
+      <div class="skills-item">
+        <div class="skills-header">
+          <h3 class="skills-name">Adobe Photoshop</h3>
+          <span class="skills-value">85 <b>%</b></span>
+        </div>
+
+        <p class="skills-description">
+          Powerful features to edit photos, design UI/UX,
+          and create 3D content. Professionals across industries
+          use Photoshop for everything from enhancing photographs
+          creating complex digital compositions.
+        </p>
+
+        <div class="skills-bar">
+          <span class="skills-percentage" style="width: 85%;"></span>
+        </div>
+      </div>
+
+      <div class="skills-item">
+        <div class="skills-header">
+          <h3 class="skills-name">Adobe Premiere Pro</h3>
+          <span class="skills-value">80 <b>%</b></span>
+        </div>
+
+        <p class="skills-description">
+          Proficient in Adobe Premiere Pro for cutting, color grading,
+          audio syncing, and transitions to produce video content.
+          With seamless integration with other Adobe apps, it's ideal for
+          high-quality videos.
+        </p>
+
+        <div class="skills-bar">
+          <span class="skills-percentage" style="width: 80%;"></span>
+        </div>
+      </div>
+
+      <div class="section-deco deco-left">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- //////////////////// WORKS ///////////////////// -->
+
+  <section class="work section" id="works">
+    <h2 class="section-title" data-title="My Works">Experience</h2>
+
+    <div class="container">
+      <!-- <ul class="work-list">
+        <li class="work-item active-work" data-filter="all">All</li>
+        <li class="work-item" data-filter=".projects">Projects</li>
+        <li class="work-item" data-filter=".cinematography">Cinematography</li>
+      </ul> -->
+
+      <ul class="work-list">
+        <li class="work-item" [ngClass]="{ 'active-work': activeFilter === 'all' }" (click)="onFilterClick('all')"
+          data-filter="all">
+          All
+        </li>
+        <li class="work-item" [ngClass]="{ 'active-work': activeFilter === 'projects' }"
+          (click)="onFilterClick('projects')" data-filter=".projects">
+          Projects
+        </li>
+        <li class="work-item" [ngClass]="{ 'active-work': activeFilter === 'cinematography' }"
+          (click)="onFilterClick('cinematography')" data-filter=".cinematography">
+          Cinematography
+        </li>
+      </ul>
+
+
+      <div id="work-container" class="work-container grid">
+        <div class="mix projects">
+          <div class="card">
+            <img src="assets/img/p1.png" alt="" class="work-img">
+
+            <h4 class="work-category">Real Estate Project</h4>
+            <h3 class="work-title">Web<span> Development</span></h3>
+
+            <p class="work-description">
+              Worked as Frontend Developer for this project. Using HTML, CSS,
+              JavaScript and Angular Framework.Integrated dynamic features such as forms, sliders, and animations to
+              enhance interactivity.
+            </p>
+
+            <!-- <a href="" class="link">
+              See Pricing <i class="ri-arrow-right-line link-icon"></i>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="mix projects">
+          <div class="card">
+            <img src="assets/img/p2.png" alt="" class="work-img">
+
+            <h4 class="work-category">Real Estate Project</h4>
+            <h3 class="work-title">Web<span> Development</span></h3>
+
+            <p class="work-description">
+              Designed and implemented responsive web interfaces using HTML, CSS, and JavaScript to ensure seamless user
+              experiences across devices.
+            </p>
+
+            <!-- <a href="" class="link">
+              See Pricing <i class="ri-arrow-right-line link-icon"></i>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="mix projects">
+          <div class="card">
+            <img src="assets/img/p3.png" alt="" class="work-img">
+
+            <h4 class="work-category">Cabs Project</h4>
+            <h3 class="work-title">Web<span> Development</span></h3>
+
+            <p class="work-description">
+              Developed responsive front-end interfaces and collaborated with back-end developers using PHP Laravel to
+              ensure seamless integration.
+            </p>
+
+            <!-- <a href="" class="link">
+              See Pricing <i class="ri-arrow-right-line link-icon"></i>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="mix cinematography">
+          <div class="card">
+            <img src="assets/img/c1.jpg" alt="" class="work-img">
+
+            <h4 class="work-category">App Ad Shoot</h4>
+            <p class="work-category-para">The picture above was taken on the ad shoot set</p>
+            <h3 class="work-title">Assistant<span> Cinematographer</span></h3>
+
+            <p class="work-description">
+              Assisted in cinematography for an app advertisement shoot, supporting camera setup, shot composition, and
+              lighting coordination.
+            </p>
+
+            <!-- <a href="" class="link">
+              See Pricing <i class="ri-arrow-right-line link-icon"></i>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="mix cinematography">
+          <div class="card">
+            <img src="assets/img/c2.jpg" alt="" class="work-img">
+
+            <h4 class="work-category">Viveks Ad Shoot</h4>
+            <p class="work-category-para">The picture above was taken on the ad shoot set</p>
+            <h3 class="work-title">Assistant<span> Cinematographer</span></h3>
+
+            <p class="work-description">
+              Worked as an Assistant Cinematographer for an ad shoot with Viveks ( Electronics and Appliances ),
+              assisting with camera setups and lighting execution.
+            </p>
+
+            <!-- <a href="" class="link">
+              See Pricing <i class="ri-arrow-right-line link-icon"></i>
+            </a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="section-deco deco-right">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+    </div>
+  </section>
+
+  <!-- //////////////////// RESUME ///////////////////// -->
+
+  <section class="resume section" id="resume">
+    <h2 class="section-title" data-title="My Story">Resume</h2>
+
+    <!-- <div class="resume-container container grid">
+      <div class="resume-group">
+        <h3 class="resume-title">Education</h3>
+
+        <div class="resume-items">
+          <div class="resume-item">
+            <div class="resume-header">
+              <h3 class="resume-header-title">Sri Krishna Arts & Science College</h3>
+              <span class="resume-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">Bsc Computer Technology</h3>
+                <span class="resume-date">2019 - 2022</span>
+              </div>
+
+              <p class="resume-description">I hold a Bachelor's degree from SKASC with an aggregate of 75%.</p>
+            </div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-header">
+              <h3 class="resume-header-title">GKD Matric Hr.sec School</h3>
+              <span class="resume-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">HSC</h3>
+                <span class="resume-date">2018 - 2019</span>
+              </div>
+
+              <p class="resume-description">Completed Higher Secondary Education under the State Board with 59% marks.</p>
+            </div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-header">
+              <h3 class="resume-header-title">Bishop Francis Matric School</h3>
+              <span class="resume-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">SSLC</h3>
+                <span class="resume-date">2015 - 2016</span>
+              </div>
+
+              <p class="resume-description">Successfully completed SSLC under State Board in 2016, securing 90.2% marks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-group">
+        <h3 class="resume-title">Experience</h3>
+
+        <div class="resume-items">
+          <div class="resume-item">
+            <div class="resume-header">
+              <h3 class="resume-header-title">Frontend Developer</h3>
+              <span class="resume-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">Hawkeye Digitech</h3>
+                <span class="resume-date">2023 - Present</span>
+              </div>
+
+              <p class="resume-description">Worked as Frontend Developer for this project. Using HTML, CSS,
+                JavaScript and Angular Framework.</p>
+            </div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-header">
+              <h3 class="resume-header-title">Frontend Developer</h3>
+              <span class="resume-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">Hawkeye Digitech</h3>
+                <span class="resume-date">2023 - Present</span>
+              </div>
+
+              <p class="resume-description">Worked as Frontend Developer for this project. Using HTML, CSS,
+                JavaScript and Angular Framework.</p>
+            </div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-header">
+              <h3 class="resume-header-title">Assistant Cinematographer</h3>
+              <span class="resume-icon">
+                <i class="ri-add-line"></i>
+              </span>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title"></h3>
+                <span class="resume-date">2022 - 2023</span>
+              </div>
+
+              <p class="resume-description">An assistant cinematographer supports the director
+                of photography in setting up camera equipment,
+                managing lenses, and ensuring smooth operation on set.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="resume-container container grid">
+      <!-- Education Group -->
+      <div class="resume-group">
+        <h3 class="resume-title">Education</h3>
+        <div class="resume-items">
+          <div class="resume-item" *ngFor="let education of educationList; let i = index"
+            [class.accordion-open]="openedIndex === 'edu' + i">
+            <div class="resume-header" (click)="toggleAccordion('edu' + i)">
+              <h3 class="resume-header-title">{{ education.institution }}</h3>
+              <span class="resume-icon">
+                <i [ngClass]="openedIndex === 'edu' + i ? 'ri-subtract-line' : 'ri-add-line'"></i>
+              </span>
+            </div>
+            <div class="resume-content" [style.height]="openedIndex === 'edu' + i ? 'auto' : '0'">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">{{ education.title }}</h3>
+                <span class="resume-date">{{ education.date }}</span>
+              </div>
+              <p class="resume-description">{{ education.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Group -->
+      <div class="resume-group">
+        <h3 class="resume-title">Experience</h3>
+        <div class="resume-items">
+          <div class="resume-item" *ngFor="let experience of experienceList; let i = index"
+            [class.accordion-open]="openedIndex === 'exp' + i">
+            <div class="resume-header" (click)="toggleAccordion('exp' + i)">
+              <h3 class="resume-header-title">{{ experience.position }}</h3>
+              <span class="resume-icon">
+                <i [ngClass]="openedIndex === 'exp' + i ? 'ri-subtract-line' : 'ri-add-line'"></i>
+              </span>
+            </div>
+            <div class="resume-content" [style.height]="openedIndex === 'exp' + i ? 'auto' : '0'">
+              <div class="resume-content-header">
+                <h3 class="resume-content-title">{{ experience.company }}</h3>
+                <span class="resume-date">{{ experience.date }}</span>
+              </div>
+              <p class="resume-description">{{ experience.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-deco deco-left">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- //////////////////// CONTACT ///////////////////// -->
+
+  <section class="contact section" id="contact">
+    <h2 class="section-title" data-title="Let's Talk About Ideas">Contact Me</h2>
+
+    <div class="contact-container container grid">
+      <div class="contact-content">
+        <div class="contact-card">
+          <span class="contact-icon">
+            <i class="ri-map-2-line"></i>
+          </span>
+
+          <div>
+            <h3 class="contact-title">Address</h3>
+            <p class="contact-data">K.Vadamadurai, Coimbatore</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">
+            <i class="ri-user-3-line"></i>
+          </span>
+
+          <div>
+            <h3 class="contact-title">Freelance</h3>
+            <p class="contact-data">Available Right Now</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">
+            <i class="ri-mail-line"></i>
+          </span>
+
+          <div>
+            <h3 class="contact-title">Email</h3>
+            <p class="contact-data">barathkumarvjf&#64;.com</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">
+            <i class="ri-contacts-book-2-line"></i>
+          </span>
+
+          <div>
+            <h3 class="contact-title">Phone</h3>
+            <p class="contact-data">9384211998</p>
+          </div>
+        </div>
+      </div>
+
+      <form action="" class="contact-form grid">
+        <div class="contact-form-group grid">
+          <div class="contact-form-div">
+            <label for="" class="contact-form-label">Your Full Name <b>*</b></label>
+
+            <input type="text" class="contact-form-input" id="contact-name">
+          </div>
+
+          <div class="contact-form-div">
+            <label for="" class="contact-form-label">Your Email Address <b>*</b></label>
+
+            <input type="email" class="contact-form-input" id="contact-email">
+          </div>
+        </div>
+
+        <div class="contact-form-div">
+          <label for="" class="contact-form-label">Your Subject <b>*</b></label>
+
+          <input type="text" class="contact-form-input" id="contact-subject">
+        </div>
+
+        <div class="contact-form-div">
+          <label for="" class="contact-form-label">Your Message <b>*</b></label>
+
+          <textarea class="contact-form-input contact-form-area" id="contact-message"></textarea>
+        </div>
+
+        <div class="contact-submit">
+          <span> * Accept the Terms and Conditions.</span>
+
+          <button type="submit" class="btn">Send Message</button>
+        </div>
+
+        <p class="message" id="message"></p>
+      </form>
+
+      <div class="section-deco deco-right">
+        <img src="assets/img/shape-1.png" alt="" class="shape">
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- //////////////////// FOOTER ///////////////////// -->
+
+<footer class="footer">
+  <div class="footer-container container">
+    <div class="footer-socials social-links">
+      <!-- <a href="" target="_blank" class="social-link">
+        <i class="ri-twitter-x-fill"></i>
+      </a>
+
+      <a href="" target="_blank" class="social-link">
+        <i class="ri-instagram-line"></i>
+      </a> -->
+
+      <a href="https://github.com/barathkumar703" target="_blank" class="social-link">
+        <i class="ri-facebook-circle-fill"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/barath-kumar-3213a5357" target="_blank" class="social-link">
+        <i class="ri-linkedin-box-fill"></i>
+      </a>
+    </div>
+
+    <p class="footer-copyright">© 2025 <span>Barath Kumar</span>. All Rights Reserved</p>
+
+    <p class="footer-copyright">Developed by <i class="ri-heart-2-fill"></i> <span> Barath Kumar</span></p>
+  </div>
+</footer>
+
+<!-- //////////////////// STYLE SWITCHER ///////////////////// -->
+
+<div class="style-switcher" id="style-switcher" [ngClass]="{'show': settingsOpen}">
+  <h2 class="style-swicther-title">Style Switcher</h2>
+
+  <div class="style-switcher-item">
+    <h3 class="style-switcher-subtitle">Colors</h3>
+
+    <!-- <div class="style-switcher-colors">
+      <span class="style-switcher-color active-color" style="--hue: 165">
+        <i class="ri-check-line"></i>
+      </span>
+
+      <span class="style-switcher-color" style="--hue: 260">
+        <i class="ri-check-line"></i>
+      </span>
+
+      <span class="style-switcher-color" style="--hue: 345">
+        <i class="ri-check-line"></i>
+      </span>
+
+      <span class="style-switcher-color" style="--hue: 65">
+        <i class="ri-check-line"></i>
+      </span>
+
+      <span class="style-switcher-color" style="--hue: 15">
+        <i class="ri-check-line"></i>
+      </span>
+    </div> -->
+    <div class="style-switcher-colors">
+      <span *ngFor="let hue of hues" class="style-switcher-color" [ngClass]="{ 'active-color': hue === selectedHue }"
+        [style.--hue]="hue" (click)="setHue(hue)">
+        <i *ngIf="hue === selectedHue" class="ri-check-line"></i>
+      </span>
+    </div>
+
+  </div>
+
+  <!-- <div class="style-switcher-item">
+    <h3 class="style-switcher-subtitle">Theme</h3>
+
+    <div class="style-switcher-themes">
+      <div class="style-switcher-theme">
+        <input type="radio" class="style-switcher-input" name="body-theme" value="light" id="light-theme"
+          checked="true" />
+
+        <label for="light-theme" class="style-switcher-label">Light</label>
+      </div>
+
+      <div class="style-switcher-theme">
+        <input type="radio" class="style-switcher-input" name="body-theme" value="dark" id="dark-theme" />
+
+        <label for="dark-theme" class="style-switcher-label">Dark</label>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="style-switcher-item">
+    <h3 class="style-switcher-subtitle">Theme</h3>
+
+    <div class="style-switcher-themes">
+      <div class="style-switcher-theme">
+        <input type="radio" class="style-switcher-input" name="body-theme" value="light" id="light-theme"
+          [(ngModel)]="currentTheme" (change)="onThemeChange()" />
+        <label for="light-theme" class="style-switcher-label">Light</label>
+      </div>
+
+      <div class="style-switcher-theme">
+        <input type="radio" class="style-switcher-input" name="body-theme" value="dark" id="dark-theme"
+          [(ngModel)]="currentTheme" (change)="onThemeChange()" />
+        <label for="dark-theme" class="style-switcher-label">Dark</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="style-switcher-close" (click)="toggleSettings()">
+    <i class="ri-close-line"></i>
+  </div>
+</div>
+
+<router-outlet />
+
+
+<router-outlet />
